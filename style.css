@@ -1,0 +1,1386 @@
+/*FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f8f8f8;
+}
+
+.navbar a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Navbar */
+.navbar {
+    align-items: center;
+    top: 0;
+    width: 100%;
+    justify-content: space-between;
+    padding: 1.5rem 1rem;
+    /* Adjusted padding for mobile */
+    background-color: white;
+    box-shadow: 3px 3px 5px black;
+    border-radius: 0;
+    position: fixed;
+    z-index: 1000;
+}
+
+.navbar-toggle {
+    right: 1.5rem;
+    position: absolute;
+    display: block;
+    cursor: pointer;
+    height: 1rem;
+    width: 1rem;
+}
+
+.navbar-toggle::before,
+.navbar-toggle::after {
+    content: "";
+    position: absolute;
+    height: 2.5px;
+    width: 2rem;
+    background-color: black;
+    transform-origin: left;
+    transition: all 200ms;
+}
+
+.navbar-toggle::after {
+    top: 100%;
+}
+
+.navbar-toggle.navbar-expand::before {
+    transform: rotate(40deg);
+    width: 1.45rem;
+}
+
+.navbar-toggle.navbar-expand::after {
+    transform: rotate(-40deg);
+    width: 1.45rem;
+}
+
+.navbar ul {
+    list-style: none;
+}
+
+.navbar-logo {
+    width: 240px;
+}
+
+.navbar-group {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 0;
+    justify-content: space-between;
+    width: 100%;
+    /* Full width for mobile menu */
+    background-color: white;
+    /* Ensure background for expanded menu */
+    position: absolute;
+    top: 65px;
+    /* Position below navbar */
+    left: 0;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-group.navbar-expand {
+    display: flex;
+}
+
+.navbar-item {
+    padding: 0.5rem 1rem;
+    /* Adjusted padding */
+    position: relative;
+    text-wrap: nowrap;
+    cursor: pointer;
+    width: fit-content;
+    align-items: center;
+    gap: 1rem;
+    color: #262626;
+    font-family: "Poppins";
+    font-size: 16px;
+    /* Adjusted font size for mobile */
+}
+
+.navbar-item:hover {
+    color: #337ab7;
+}
+
+.navbar .navbar-down {
+    position: relative;
+    /* Keep relative for mobile dropdown */
+    top: 0;
+    /* Adjusted for mobile */
+    left: 0;
+    background-color: #f8f8f8;
+    /* Lighter background for sub-menu */
+    padding: 0.5rem 1rem;
+    /* Adjusted padding */
+    z-index: 10;
+    width: 100%;
+    /* Full width for sub-menu */
+}
+
+@keyframes menuReveal {
+    from {
+        transform: translateY(-0.5rem);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.navbar .navbar-action {
+    display: none;
+}
+
+.navbar .navbar-action.navbar-expand {
+    display: inherit;
+}
+
+.navbar .navbar-action button {
+    border: 1px solid black;
+    background: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 200ms;
+}
+
+.navbar .navbar-action button:hover {
+    box-shadow: 5px 5px 0 black;
+    transform: translate(-5px, -5px);
+}
+
+/* Screen (Tablet/Laptop) */
+@media only screen and (min-width: 768px) {
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+        border-radius: 0;
+    }
+
+    .navbar-logo {
+        width: 280px;
+        /* Original logo size */
+    }
+
+    .navbar-item {
+        display: flex;
+        flex-direction: row;
+        font-size: 18px;
+        /* Original font size */
+    }
+
+    .navbar-item:has(> .navbar-down)::after {
+        content: "";
+        width: 5px;
+        aspect-ratio: 1/1;
+        display: inline-block;
+        border-right: 1px solid black;
+        border-bottom: 1px solid black;
+        transform: rotate(45deg);
+    }
+
+    .navbar .navbar-group {
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+        position: static;
+        /* Reset position for desktop */
+        box-shadow: none;
+        /* Remove shadow for desktop */
+        width: auto;
+        /* Reset width for desktop */
+        padding: 0;
+        /* Reset padding for desktop */
+    }
+
+    .navbar .navbar-action {
+        display: inherit;
+    }
+
+    .navbar .navbar-down {
+        position: absolute;
+        display: none;
+        border: 1px solid gray;
+        box-shadow: 5px 5px 0 black;
+        top: 100%;
+        /* Position below parent item */
+        left: 0;
+        width: auto;
+        /* Reset width for desktop dropdown */
+    }
+
+    .navbar-down.navbar-expand {
+        display: block;
+        animation: menuReveal 200ms linear;
+    }
+
+    .navbar-toggle {
+        display: none;
+    }
+}
+
+/* Screen (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    body {
+        background-color: #e7e7e7;
+    }
+
+    .navbar-logo.logo-large {
+        display: block;
+    }
+
+    .navbar-logo.logo-mark {
+        display: none;
+    }
+}
+
+/* Navbar End */
+
+
+
+
+
+
+/* AWAL BERITA TERBARU*/
+.berita-terbaru h2 {
+    margin-top: 100px;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #333131;
+    /* Default untuk mobile: center */
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.berita-terbaru hr {
+    border: 1.5px solid #5472d2;
+    /* Default untuk mobile: center */
+    width: 80%;
+    margin: 10px auto;
+}
+
+/* Desktop/Tablet - Rata Kiri */
+@media only screen and (min-width: 768px) {
+
+    /* Target khusus h2 di section berita */
+    .berita-terbaru h2 {
+        text-align: left;
+        margin-left: 50px;
+        width: auto;
+        padding: 0;
+        font-size: 25px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin-top: 70px;
+    }
+
+    /* Target hr setelah h2 berita */
+    .berita-terbaru hr {
+        margin-left: 50px;
+        margin-right: auto;
+        width: 93%;
+        text-align: left;
+        border: 2px solid #5472d2;
+    }
+}
+/* AKHIR BERITA TERBARU*/
+
+
+
+
+
+
+/* AWAL VIDEO */
+.panel {
+    margin-top: 20rem;
+    margin-bottom: 20rem;
+}
+.panel-body {
+    margin-top: -10rem;
+}
+.glyphicon{
+    margin-left: -20px;
+}
+/* AKHIR VIDEO */
+
+
+
+/* (BERANDA) cards-1 */
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 90px;
+}
+
+.card {
+    width: 100%;
+    /* Full width for mobile */
+    max-width: 320px;
+    /* Max width to prevent stretching on very large screens */
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 3px 1px 10px 0px rgba(0, 0, 0, 0.75);
+    margin: 20px;
+    transition: 0.5s;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.card-content {
+    padding: 16px;
+}
+
+.card-content h4 {
+    margin-bottom: 8px;
+    color: rgb(0, 160, 208);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card content p {
+    /* Typo: should be .card-content p */
+    color: #666;
+    font-size: 15px;
+    line-height: 1.3;
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(0.85);
+}
+
+/* Media queries for cards-1 */
+@media only screen and (min-width: 600px) {
+    .card {
+        width: calc(50% - 40px);
+        /* Two columns */
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .card {
+        width: calc(33.33% - 40px);
+        /* Three columns */
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .card {
+        width: calc(25% - 40px);
+        /* Four columns */
+    }
+}
+
+/* Akhir cards-1 */
+
+h2.jurusan {
+    padding: 20px;
+    /* Adjusted padding for mobile */
+    font-size: 24px;
+    /* Default for mobile */
+    color: #333;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+    h2.jurusan {
+        padding: 50px;
+        font-size: 30px;
+    }
+}
+
+.header {
+    margin-top: 70px;
+    background-color: #ffffff;
+    height: auto;
+    /* Changed to auto for flexible height */
+}
+
+/* (BERANDA) CARD-2 */
+.card-container2 {
+    background-color: #f4f4f4;
+    margin-top: 100px;
+}
+
+.card-container2 h2 {
+    text-align: center;
+}
+
+.card-item {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 90px;
+    margin-bottom: 100px;
+}
+
+.card-item .card-2 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    /* Full width for mobile */
+    max-width: 320px;
+    /* Max width to prevent stretching */
+    height: 300px;
+    background-color: #ffffff;
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+    transition: 0.5s;
+    border-radius: 3px;
+    outline: 1px solid rgba(0, 160, 208, 0.321);
+    margin: 20px;
+    /* Adjusted margin */
+    margin-bottom: 45px;
+}
+
+.card-item .card-2 .img-box {
+    position: absolute;
+    top: 20px;
+    width: calc(100% - 40px);
+    /* Adjusted width for mobile */
+    height: 220px;
+    overflow: hidden;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.card-item .card-2:hover {
+    height: 400px;
+}
+
+.card-item .card-2:hover .img-box {
+    top: -100px;
+    scale: 0.75;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+.card-item .card-2 .img-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-item .card-2 .content {
+    position: absolute;
+    top: 240px;
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    /* Adjusted padding for mobile */
+    text-align: center;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.card-item .card-2:hover .content {
+    top: 130px;
+    height: 250px;
+}
+
+.card-item .card-2 .content h3 {
+    font-family: monospace;
+    font-size: 18px;
+    /* Adjusted font size for mobile */
+    color: rgb(65, 64, 64);
+}
+
+.card-item .card-2 .content p {
+    font-family: Helvetica;
+    font-size: 14px;
+    /* Adjusted font size for mobile */
+}
+
+/* Media queries for CARD-2 */
+@media only screen and (min-width: 768px) {
+    .card-item .card-2 {
+        width: calc(50% - 40px);
+        /* Two columns */
+    }
+
+    .card-item .card-2 .img-box {
+        width: 300px;
+        /* Original width */
+    }
+
+    .card-item .card-2 .content {
+        padding: 0 30px;
+        /* Original padding */
+    }
+
+    .card-item .card-2 .content h3 {
+        font-size: 20px;
+        /* Original font size */
+    }
+
+    .card-item .card-2 .content p {
+        font-size: initial;
+        /* Reset to default */
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .card-item .card-2 {
+        width: calc(33.33% - 40px);
+        /* Three columns */
+    }
+}
+
+/*AKHIR (BERANDA) CARD-2*/
+
+
+
+
+
+
+/* AWAL ISI KETERANGAN SEKOLAH */
+#beranda {
+    background: url('assets/bangunanSekolah.jpg') center center / cover no-repeat;
+    background-attachment: fixed;
+    /* Default for desktop */
+    padding: 80px 0;
+    /* Adjusted padding for mobile */
+    color: white;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+#beranda::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+#beranda .display-4 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 36px;
+    /* Default for mobile */
+}
+
+#beranda .lead {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    /* Default for mobile */
+    max-width: 100%;
+    /* Full width for mobile */
+    margin: 20px auto;
+    line-height: 1.6;
+    text-align: center;
+    padding: 0 15px;
+    /* Add horizontal padding */
+}
+
+@media (max-width: 767px) {
+    #beranda {
+        background-attachment: scroll;
+        /* Change to scroll for mobile */
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #beranda {
+        padding: 120px 0;
+        /* Original padding for desktop */
+    }
+
+    #beranda .display-4 {
+        font-size: 48px;
+        /* Original font size for desktop */
+    }
+
+    #beranda .lead {
+        font-size: 20px;
+        /* Original font size for desktop */
+        max-width: 1200px;
+        /* Original max-width for desktop */
+        padding: 0;
+        /* Remove padding for desktop */
+    }
+}
+
+/* AKHIR ISI KETERANGAN SEKOLAH */
+
+
+/* AWAL KONTEN SEKOLAH */
+.service-title {
+    margin-top: 60px;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.service-box {
+    background-color: #ffffff;
+    border-left: 4px solid #4b6cb7;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: left;
+    min-height: 200px;
+}
+
+.service-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+    color: #4b6cb7;
+}
+
+.service-box h4 {
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.map-container {
+    height: 400px;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+hr.custom-hr {
+    width: 60px;
+    border: 2px solid #4b6cb7;
+    margin: 10px auto 30px auto;
+}
+
+@media (max-width: 767px) {
+    .service-box {
+        text-align: center;
+    }
+
+    .service-icon {
+        font-size: 28px;
+    }
+
+    body {
+        background-color: #fefefe;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .service-box h4 {
+        font-size: 24px;
+    }
+
+    .service-box p {
+        font-size: 16px;
+    }
+
+    body {
+        background-color: #f7f4f4;
+    }
+}
+
+/* AKHIR KONTEN SEKOLAH */
+
+
+
+
+
+
+/* AWAL KATA SAMBUTAN */
+.sambutan-section {
+    padding: 50px 20px;
+}
+
+.sambutan-box {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sambutan-img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.sambutan-text {
+    text-align: justify;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.kepala-nama {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.jabatan {
+    font-style: italic;
+    color: #666;
+}
+
+@media only screen and (min-width: 768px) {
+    .sambutan-img {
+        margin-bottom: 20px;
+    }
+
+    .sambutan-text p {
+        font-size: 18px;
+    }
+
+    .sambutan-section {
+        margin-top: 30px;
+    }
+}
+
+/* AKHIR KATA SAMBUTAN */
+
+
+
+
+
+
+/* AWAL SEJARAH */
+.sejarah-smk {
+    background: #337ab7;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.konten-sejarah {
+    padding: 50px 20px;
+    color: white;
+    margin: 30px auto;
+    padding: 20px 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+}
+
+.konten-sejarah h2 {
+    margin-top: 0;
+    color: #337ab7;
+    font-size: 25px;
+    margin-bottom: 20px;
+    font-family: "Roboto condensed", sans-serif;
+}
+
+.konten-sejarah p {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #333;
+}
+
+.img-responsive {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: 15px;
+}
+
+@media only screen and (min-width: 768px) {
+    .sejarah-smk {
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+
+    .sejarah-smk h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        font-family: "Roboto condensed", sans-serif;
+    }
+
+    .sejarah-smk p {
+        font-size: 20px;
+    }
+
+    .konten-sejarah {
+        padding: 50px 50px;
+        margin-bottom: 30px;
+    }
+
+    .konten-sejarah h2 {
+        margin-top: 0;
+        font-size: 30px;
+        margin-bottom: 20px;
+        font-family: "Roboto condensed", sans-serif;
+    }
+
+    .konten-sejarah p {
+        text-align: justify;
+        font-family: "Poppins", sans-serif;
+        font-size: 17px;
+        line-height: 1.8;
+        color: #333;
+    }
+}
+
+/* AKHIR SEJARAH */
+
+
+
+
+
+
+/* AWAL VISI MISI */
+.hero {
+    background: #337ab7;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.konten-visiMisi {
+    background-color: white;
+    margin: 30px auto;
+    padding: 20px 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+}
+
+.konten-visiMisi h2 {
+    margin-top: 0;
+    color: #337ab7;
+    font-size: 25px;
+    margin-bottom: 20px;
+    font-family: "Roboto condensed", sans-serif;
+}
+
+.konten-visiMisi p {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #333;
+}
+
+.konten-visiMisi h2 {
+    color: #337ab7;
+    margin-bottom: 20px;
+    font-family: "Roboto condensed", sans-serif;
+}
+
+@media only screen and (min-width: 768px) {
+    .hero {
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        font-family: "Roboto condensed", sans-serif;
+    }
+
+    .hero p {
+        font-size: 20px;
+    }
+
+    .konten-visiMisi {
+        padding: 30px 30px;
+    }
+
+    .konten-visiMisi h2 {
+        font-size: 32px;
+        font-family: "Roboto condensed", sans-serif;
+    }
+
+    .konten-visiMisi p {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #333;
+        font-family: sans-serif;
+    }
+}
+/* AKHIR VISI MISI */
+
+
+
+
+
+
+/* AWAL BERITA */
+.berita h2 {
+    margin-top: 100px;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #333131;
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.berita hr {
+    border: 1.5px solid #5472d2;
+    width: 80%;
+    margin: 10px auto;
+}
+
+/* Desktop/Tablet - Rata Kiri */
+@media only screen and (min-width: 768px) {
+
+    /* Target khusus h2 di section berita */
+    .berita h2 {
+        text-align: left;
+        margin-left: 50px;
+        width: auto;
+        padding: 0;
+        font-size: 30px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin-top: 120px;
+    }
+
+    /* Target hr setelah h2 berita */
+    .berita hr {
+        margin-left: 50px;
+        margin-right: auto;
+        width: 93%;
+        text-align: left;
+        border: 2px solid #5472d2;
+    }
+}
+/* AKHIR BERITA */
+
+
+
+
+
+
+/* AWAL PANEL */
+.panel {
+    margin-top: 100px;
+    margin-bottom: 80px;
+}
+.panel-body {
+    margin-top: 10px;
+}
+.panel-body h2{
+    font-size: 24px;
+    margin-left: 20px;
+}
+@media only screen and (min-width: 768px) {
+    .panel {
+        margin-top: 150px;
+        margin-bottom: 150px;
+    }
+
+    .panel-body {
+        margin-top: 40px;
+    }
+
+    .panel-body h2 {
+        margin-left: 20px;
+    }
+}
+/* AKHIR PANEL */
+
+
+
+
+
+
+/* AWAL PENDAFTARAN */
+.btn-daftar {
+    background-color: #0030aa;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    border-radius: 6px;
+    margin: 40px 0;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.btn-daftar:hover {
+    background-color: #f3ac1e;
+    color: #fff;
+}
+
+.modal-header {
+    background-color: #3b7ddd;
+    color: #fff;
+    padding: 20px;
+    border-bottom: none;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    position: relative;
+}
+
+.modal-header h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.close-header {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #fff;
+    background: transparent;
+    border: none;
+    padding: 0;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+    cursor: pointer;
+}
+
+.close-header:hover {
+    opacity: 1;
+    color: #e6e6e6;
+}
+
+
+.modal-content {
+    border-radius: 6px;
+    border: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h4 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    border-left: 4px solid #3b7ddd;
+    padding-left: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.form-control {
+    border-radius: 4px;
+    box-shadow: none;
+}
+
+label {
+    font-weight: normal;
+}
+
+.modal-footer {
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.btn-primary i {
+    margin-right: 5px;
+}
+
+/* AKHIR PENDAFTARAN */
+
+/* AWAL BANTUAN */
+#bantuan {
+    background: rgba(0, 0, 0, 0.439) url('assets/bantuan.jpg') center center / cover no-repeat;
+    padding: 80px 0;
+    color: white;
+    background-blend-mode: darken;
+    text-align: center;
+    position: relative;
+}
+
+#bantuan .display-4 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 35px;
+    margin-top: 40px;
+}
+
+@media (max-width: 767px) {
+    #bantuan {
+        background-attachment: scroll;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #bantuan {
+        padding: 120px 0;
+    }
+
+    #bantuan .display-4 {
+        font-size: 48px;
+    }
+}
+
+/* AKHIR BANTUAN */
+
+/* AWAL KONTEN BANTUAN */
+.icon .fa-solid {
+    color: #4b6cb7;
+    font-size: 50px;
+    text-align: left;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+
+.icon h4 {
+    font-family: "Roboto Slab";
+    font-size: 25px;
+    text-align: left;
+    margin-bottom: 20px;
+    color: #181616;
+}
+
+.icon p {
+    font-family: "Roboto";
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: left;
+    color: #787575;
+}
+
+.icon {
+    text-align: left;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+@media only screen and (min-width: 768px) {
+    .icon .fa-solid {
+        margin-top: 50px;
+    }
+}
+
+/* AKHIR KONTEN BANTUAN */
+
+
+
+
+/* AWAL SOSIAL-MEDIA */
+.sosial-media {
+    font-weight: bold;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    color: #1e1e1e;
+}
+
+.social-box {
+    text-decoration: none;
+    background-color: #38383883;
+    border-radius: 10px;
+    text-align: center;
+    padding: 30px 20px;
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.social-box:hover{
+    text-decoration: none;
+    cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    background-color: #4b6cb7;
+}
+
+.social-box img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 15px;
+}
+
+.social-name {
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .sosial-media {
+        text-decoration: none;
+        font-size: 30px;
+        margin-bottom: 50px;
+        margin-top: 100px;
+    }
+    .social-box img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .social-name {
+        font-size: 16px;
+    }
+}
+
+
+/* AKHIR SOSIAL-MEDIA */
+
+
+
+
+
+/* AWAL FOOTER */
+.icon {
+    text-align: left;
+    margin-left: 1rem;
+    /* Adjusted margin for mobile */
+    margin-right: 1rem;
+}
+
+.footer {
+    background: #111;
+    padding: 30px 0;
+    /* Adjusted padding for mobile */
+    color: #dfdddd;
+}
+
+.footer h4 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.footer ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer ul li {
+    margin-bottom: 8px;
+    /* Adjusted margin */
+}
+
+.footer ul li a {
+    color:  #dfdddd;
+    text-decoration: none;
+    font-size: 13px;
+    /* Adjusted font size for mobile */
+}
+
+.footer ul li a:hover {
+    color: #f4c542;
+}
+
+.footer .logo img {
+    margin-bottom: 15px;
+    margin-top: 30px;
+    width: 100px;
+    /* Adjusted width for mobile */
+}
+
+.footer .logo h3 span {
+    display: block;
+}
+
+.footer .social-icons a {
+    color: #dfdddd;
+    margin-right: 10px;
+    font-size: 20px;
+    /* Adjusted font size for mobile */
+}
+
+.footer .social-icons a:hover {
+    color: #f4c542;
+}
+
+.footer .contact-info i {
+    margin-right: 8px;
+}
+
+@media (max-width: 767px) {
+    .footer .col-md-3 {
+        margin-bottom: 30px;
+        /* Spacing between columns on mobile */
+        text-align: center;
+        /* Center text for mobile */
+    }
+
+    .footer .social-icons {
+        text-align: center;
+    }
+
+    .footer .contact-info {
+        text-align: center;
+    }
+
+    .footer ul {
+        padding-left: 0;
+    }
+
+    .footer ul li {
+        display: block;
+        /* Stack list items vertically */
+        margin: 0 auto 8px;
+        /* Center and add margin */
+    }
+
+    .footer .logo h3 {
+        font-size: 24px;
+        /* Slightly larger for mobile logo */
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .footer {
+        padding: 50px 0;
+        /* Original padding for desktop */
+    }
+
+    .footer h4 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .footer ul li {
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    .footer ul li a {
+        font-size: 18px;
+    }
+
+    .footer .logo img {
+        width: 150px;
+        margin-top: 10px;
+    }
+
+    .icon {
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+}
+/* AKHIR FOOTER */

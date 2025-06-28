@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMK SWASTA HOGWARTS</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+	<!-- AOS (Animate on Scroll) CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"/>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<style>
+</style>
+<body>
+	<!-- AWAL NAVBAR -->
+	<header>
+    <nav class="navbar">
+        <div class="navbar-toggle"></div>
+        <img class="navbar-logo" src="assets/Logo Smk.png" alt="Logo kelasfrontend.com">
+			<div class="navbar-action"></div>
+			<ul class="navbar-group">
+			<a href="index.html"><li class="navbar-item">Beranda</li></a>
+				<li class="navbar-item">Profil
+					<ul class="navbar-down">
+					<a href="Kata sambutan.html"><li class="navbar-item">Kata Sambutan</li></a>
+					<a href="Visi dan Misi.html"><li class="navbar-item">Visi dan Misi</li></a>
+					<a href="Sejarah.html"><li class="navbar-item">Sejarah</li></a>
+					</ul>
+				</li>
+			<a href="Berita.html"><li class="navbar-item">Berita</li></a>
+				<li class="navbar-item">Galeri
+					<ul class="navbar-down">
+					<a href="Galeri Foto.html"><li class="navbar-item">Galeri Foto</li></a>
+					<a href="Galeri Video.html"><li class="navbar-item">Galeri Video</li></a>
+					</ul>
+				</li>
+			<a href="Pendaftaran.html"><li class="navbar-item">Pendaftaran</li></a>
+			<a href="Bantuan.html"><li class="navbar-item">Bantuan</li></a>
+			</ul>
+	</nav>
+	</header>
+    <!-- AKHIR NAVBAR -->
+
+    <!-- AWAL PENDAFTARAN -->
+    <section class="berita">
+        <h2 data-aos="fade-right"><i><b>Pendaftaran</b></i></h2>
+        <hr data-aos="fade-right">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" data-aos="fade-up">
+                <img src="assets/spmb1.png" class="img-thumbnail img-responsive" alt="Brosur pkkmb">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" data-aos="fade-up">
+                <img src="assets/spmb2.png" class="img-thumbnail img-responsive" alt="Brosur pkkmb">
+            </div>
+        </div>
+        <button class="btn btn-daftar" data-toggle="modal" data-target="#modalDaftar">
+            <i class="fa fa-pencil"></i> Daftar Sekarang
+        </button>
+    </div>
+    </section>
+    <!-- AKHIR PENDAFTARAN -->
+
+    <!-- AWAL MODAL FORM PENDAFTARAN -->
+    <!-- Modal -->
+    <div class="modal fade" id="modalDaftar" tabindex="-1" role="dialog" aria-labelledby="modalDaftarLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+
+                <!-- Header with Close Button -->
+                <div class="modal-header">
+                    <h4 class="modal-title" id="modalDaftarLabel">
+                        <i class="glyphicon glyphicon-pencil"></i> Formulir Pendaftaran Siswa Baru - SMKS Hogwarts
+                    </h4>
+                    <button type="button" class="close-header" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Body -->
+                <div class="modal-body">
+                    <form enctype="multipart/form-data">
+                        <div class="container-fluid">
+
+                            <!-- Data Pribadi -->
+                            <div class="form-section">
+                                <h4>Data Pribadi</h4>
+                                <div class="row">
+                                    <div class="col-sm-6 form-group">
+                                        <label>Nama Lengkap</label>
+                                        <input type="text" class="form-control" placeholder="Nama lengkap">
+                                    </div>
+                                    <div class="col-sm-3 form-group">
+                                        <label>Tempat Lahir</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-sm-3 form-group">
+                                        <label>Tanggal Lahir</label>
+                                        <input type="date" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4 form-group">
+                                        <label>Jenis Kelamin</label><br>
+                                        <label class="radio-inline"><input type="radio" name="jk"> Laki-laki</label>
+                                        <label class="radio-inline"><input type="radio" name="jk"> Perempuan</label>
+                                    </div>
+                                    <div class="col-sm-4 form-group">
+                                        <label>Agama</label>
+                                        <select class="form-control">
+                                            <option>Islam</option>
+                                            <option>Kristen</option>
+                                            <option>Katolik</option>
+                                            <option>Hindu</option>
+                                            <option>Buddha</option>
+                                            <option>Lainnya</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-4 form-group">
+                                        <label>NISN</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Alamat Lengkap</label>
+                                    <textarea class="form-control" rows="3"></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Kontak -->
+                            <div class="form-section">
+                                <h4>Kontak</h4>
+                                <div class="row">
+                                    <div class="col-sm-6 form-group">
+                                        <label>Email</label>
+                                        <input type="email" class="form-control">
+                                    </div>
+                                    <div class="col-sm-6 form-group">
+                                        <label>No HP</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Pendidikan -->
+                            <div class="form-section">
+                                <h4>Pendidikan Sebelumnya</h4>
+                                <div class="row">
+                                    <div class="col-sm-8 form-group">
+                                        <label>Asal Sekolah</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-sm-4 form-group">
+                                        <label>Nilai Rata-rata Rapor</label>
+                                        <input type="number" step="0.01" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Jurusan -->
+                            <div class="form-section">
+                                <h4>Pilihan Jurusan</h4>
+                                <div class="form-group">
+                                    <label>Jurusan</label>
+                                    <select class="form-control">
+                                        <option>Teknik Sihir Informatika</option>
+                                        <option>Rekayasa Perangkap Gelap</option>
+                                        <option>Multimedia Mantra</option>
+                                        <option>Transfigurasi Otomatis</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Upload -->
+                            <div class="form-section">
+                                <h4>Upload Dokumen</h4>
+                                <div class="row">
+                                    <div class="col-sm-4 form-group">
+                                        <label>Pas Foto 3x4</label>
+                                        <input type="file" class="form-control">
+                                    </div>
+                                    <div class="col-sm-4 form-group">
+                                        <label>Scan Ijazah/SKL</label>
+                                        <input type="file" class="form-control">
+                                    </div>
+                                    <div class="col-sm-4 form-group">
+                                        <label>Scan Kartu Keluarga</label>
+                                        <input type="file" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Footer -->
+                            <div class="modal-footer text-right">
+                                <button type="reset" class="btn btn-default">Reset</button>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="glyphicon glyphicon-send"></i> Kirim Pendaftaran
+                                </button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+	<!-- AKHIR MODAL FORM PENDAFTARAN -->
+
+    <!-- FOOTER -->
+	<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 logo">
+                <img src="assets/Logo Footer.png" width="50%" alt="">
+            </div>
+            <!-- Links -->
+            <div class="col-md-3">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="Berita.html">Berita</a></li>
+                    <li><a href="Pendaftaran.html">Pendaftaran</a></li>
+                    <li><a href="Bantuan.html">Bantuan</a></li>
+                </ul>
+            </div>
+            <!-- Support -->
+            <div class="col-md-3">
+                <h4>Support</h4>
+                <ul>
+                    <li>Documentation</li>
+                    <li>Forums</li>
+                    <li>Language Packs</li>
+                    <li>Release Status</li>
+                </ul>
+            </div>
+            <!-- Contact -->
+            <div class="col-md-3">
+                <h4>Contact</h4>
+                <ul class="contact-info">
+                    <li><i class="glyphicon glyphicon-map-marker"></i> 1, My Address, My Street, New York City, NY, USA</li>
+                    <li><i class="glyphicon glyphicon-earphone"></i> +1234567890</li>
+                    <li><i class="glyphicon glyphicon-envelope"></i> Contact@hogwarts_.Com</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+    <!-- AKHIR FOOTER -->
+
+	<!-- AOS Animation JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script src="bootstrap/js/jQuery.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="bootstrap/js/npm.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
