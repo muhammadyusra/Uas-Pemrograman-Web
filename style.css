@@ -791,7 +791,7 @@ hr.custom-hr {
 
 .konten-sejarah {
     padding: 50px 20px;
-    color: white;
+    background-color: white;
     margin: 30px auto;
     padding: 20px 25px;
     border-radius: 10px;
@@ -824,7 +824,6 @@ hr.custom-hr {
         margin-top: 0;
         margin-bottom: 30px;
     }
-
     .sejarah-smk h1 {
         font-size: 36px;
         margin-bottom: 20px;
@@ -1021,13 +1020,13 @@ hr.custom-hr {
 
 /* AWAL PENDAFTARAN */
 .btn-daftar {
-    background-color: #0030aa;
+    background-color: #073097;
     color: #fff;
-    padding: 12px 20px;
-    font-size: 18px;
+    padding: 7px 10px;
+    font-size: 12px;
     font-family: "Roboto", sans-serif;
     border-radius: 6px;
-    margin: 40px 0;
+    margin: 20px 0;
     box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
@@ -1038,7 +1037,7 @@ hr.custom-hr {
 }
 
 .modal-header {
-    background-color: #3b7ddd;
+    background-color: #084fb9;
     color: #fff;
     padding: 20px;
     border-bottom: none;
@@ -1107,6 +1106,28 @@ label {
 
 .btn-primary i {
     margin-right: 5px;
+}
+@media only screen and (min-width: 768px) {
+    .btn-daftar {
+        padding: 15px 30px;
+        font-size: 20px;
+    }
+
+    .modal-header h4 {
+        font-size: 20px;
+        margin: 20px;
+    }
+
+    .close-header {
+        font-size: 20px;
+    }
+
+    .form-section h4 {
+        font-size: 18px;
+    }
+    .modal-footer button {
+        padding: 10px 30px;
+    }
 }
 
 /* AKHIR PENDAFTARAN */
@@ -1246,6 +1267,111 @@ label {
 
 
 /* AKHIR SOSIAL-MEDIA */
+
+/* TAMPILAN BERITA */
+.header-berita {
+    background-color: #094ca3;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.header-berita h1 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 30px;
+    margin: 0;
+}
+
+.container-berita {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 15px;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.berita-img {
+    width: 100%;
+    height: auto;
+}
+
+.berita-content {
+    padding: 25px;
+}
+
+.berita-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.btn-kembali {
+    padding: 10px 25px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    background-color: #0455b8;
+    color: #fff;
+    border-radius: 5px;
+    margin: 20px 15px;
+}
+
+.btn-kembali:hover {
+    background-color: #ffaa00;
+    cursor: pointer;
+}
+
+.navigasi-berita {
+    font-family: "Poppins", sans-serif;
+    flex-direction: row;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    padding: 20px 25px;
+    background-color: #f2f2f2;
+}
+
+.navigasi-berita a {
+    color: #337ab7;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navigasi-berita a:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (min-width: 768px) {
+    .header-berita {
+        margin-top: 50px;
+    }
+
+    .btn-kembali {
+        margin: 20px 0;
+        padding: 10px 30px;
+        font-size: 15px;
+    }
+
+    .navigasi-berita {
+        font-size: 15px;
+        flex-direction: row;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .berita-content p {
+        color: #3f3e3e;
+        text-align: justify;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .navigasi-berita a {
+        margin: 8px 0;
+    }
+}
 
 
 
